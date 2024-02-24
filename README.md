@@ -116,6 +116,9 @@ ____________________________________________________________
 
 ## Lesson Learnt 
 
+## Debugging
+Screen capture
+
 ## Area for Improvements
 
 ## Resources 

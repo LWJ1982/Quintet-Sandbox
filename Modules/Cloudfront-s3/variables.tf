@@ -15,3 +15,7 @@ variable "domain_name" {
   type        = string
   default     = "sctp-sandbox.com"
 }
+
+locals {
+  website_domain = "dynamics.${var.domain_name}"
+}

@@ -6,7 +6,7 @@ resource "aws_cloudfront_origin_access_identity" "oai" {
 # cloudfront terraform - creating AWS Cloudfront distribution :
 resource "aws_cloudfront_distribution" "cf_dist" {
   enabled             = true
-  aliases             = [var.domain_name]
+  aliases             = [local.website_domain]
   default_root_object = "static-website/index.html"
   origin {
     domain_name = aws_s3_bucket.bucket.bucket_regional_domain_name
