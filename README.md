@@ -1,8 +1,8 @@
 # CapstoneProject-DevSecOps Grp 3 (Quintet)
-Deploy a static website
+Deploy a static website for client  in serveral region
+https://dynamics.sctp-sandbox.com/
 
 Slides for presentation:
-
 --URL--
 ____________________________________________________________
 ## Team consist of:
