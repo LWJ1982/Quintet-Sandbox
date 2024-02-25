@@ -1,0 +1,27 @@
+## Code Contributed by Rudyn
+name: Checkov
+run-name: ${{ github.actor }} is running Checkov on the ${{ github.ref }} branch for ${{ github.repository }} repository.
+
+on:
+  workflow_dispatch:
+  
+  pull_request:
+    branches: [ "main", "Development" ]
+
+jobs:
+  Checkov:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: src
+        
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Checkov
+      uses: bridgecrewio/checkov-action@master
+      with:
+        framework: terraform
+    
