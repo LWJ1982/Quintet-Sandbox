@@ -1,5 +1,6 @@
 # CapstoneProject-DevSecOps Grp 3 (Quintet)
-Deploy a static website for client  in serveral region
+Deploy a static website for wellness client in various region.
+Implement security measures 
 https://dynamics.sctp-sandbox.com/
 
 Slides for presentation:
