@@ -1,4 +1,4 @@
-# CapstoneProject-DevSecOps Grp 3 (Quintet)
+# CapstoneProject-DevSecOps Grp 3 (Quintet) 
 Deploy a static website for wellness client in various region.
 Implement security measures 
 https://dynamics.sctp-sandbox.com/
