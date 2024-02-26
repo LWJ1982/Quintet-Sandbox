@@ -67,7 +67,7 @@ resource "aws_s3_object" "object" {
   ]
 }
 
-#upload website png to s3:
+#upload png to s3:
 resource "aws_s3_object" "object_png" {
   bucket       = aws_s3_bucket.bucket.id
   for_each     = fileset("uploads/assets/", "*")
@@ -76,6 +76,7 @@ resource "aws_s3_object" "object_png" {
    content_type = "object/png"
 }
 
+#upload jpeg to s3:
 resource "aws_s3_object" "object_jpeg" {
   bucket       = aws_s3_bucket.bucket.id
   for_each     = fileset("uploads/assets/images/", "*")
@@ -84,6 +85,7 @@ resource "aws_s3_object" "object_jpeg" {
    content_type = "object/jpeg"
 }
 
+#upload jpg to s3:
 resource "aws_s3_object" "object_jpg" {
   bucket       = aws_s3_bucket.bucket.id
   for_each     = fileset("uploads/assets/images/", "*")
