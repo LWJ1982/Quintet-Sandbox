@@ -7,6 +7,14 @@ on:
       - main
 
 jobs:
+  install-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Run Installation of Dependencies Commands
+        run: npm install
+
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
@@ -40,7 +48,3 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
-
-
-
-
