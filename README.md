@@ -24,17 +24,19 @@ The newest index.html file from this GitHub repository can then be uploaded and 
 ____________________________________________________________
 ## CICD Pipeline (How)
 
-### VS code 
-Using VS Code as a platform
-Enable the following
+### Visual Studio Code (VSCode) 
+Using VSCode, a free and open-source source code editor provides a rich set of features for coding, debugging and version control. It is highly customisable through its extensive library of extensions, enable tailoring with several Command-Line Interface (CLI)   
+
 - Terraform CLI
 - AWS CLI
 - Git CLI
 - 
 - 
 
-### Github (Version control)
-Create a new repositories on GitHub 
+### Git + Github (Version control system)
+Using Git as a version control system that tracks changes to files while GitHub as a web-based platform that hosts Git repositories and provides collbration features for developers.
+
+Create a new repositories on GitHub (remote) 
 
 Assign appropriate access to the group members as collaborators based on their role, work with Pull Request & Merging
 
@@ -42,7 +44,7 @@ Use Secret manager to store sensitive information
 
 
 ### Terraform (Provision of infrasture)
-Write the Terraform script to be used in the CD pipeline
+Using Terraform in CI/CD pipelines is a common practice for automating infrastructure provisioning and management. Write the Terraform script to be used in the CD pipeline
 DevOps lifecycle check in local device
 - Build
 - Test 
@@ -68,7 +70,7 @@ Create a bucket to store statefile.tf in S3
 
 
 ### GitHub Action
-Write CI and CD pipeline script for automated deployment and updates when ever a pull request is allowed
+Write CI and CD pipeline script for automated deployment and updates when ever a pull request [*push to main branch] is allowed
 
 The static webpages can be built, tests can be run, and the application can be deployed.
 
