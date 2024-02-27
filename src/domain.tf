@@ -1,8 +1,8 @@
 # generate ACM cert for domain :
 resource "aws_acm_certificate" "cert" {
-  domain_name               = local.website_domain
- # subject_alternative_names = ["*.${var.domain_name}"]
-  validation_method         = "DNS"
+  domain_name = local.website_domain
+  # subject_alternative_names = ["*.${var.domain_name}"]
+  validation_method = "DNS"
 
   tags = {
     "Project"   = "Use CloudFront with s3"
