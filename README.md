@@ -34,7 +34,7 @@ Using VSCode, a free and open-source source code editor provides a rich set of f
 - 
 
 ### Git + Github (Version control system)
-Using Git as a version control system that tracks changes to files while GitHub as a web-based platform that hosts Git repositories and provides collbration features for developers.
+Using Git as a version control system that tracks changes to files while GitHub as a web-based platform that hosts Git repositories and provides collaboration features for developers.
 
 Create a new repositories on GitHub (remote) 
 
