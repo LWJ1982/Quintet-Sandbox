@@ -22,6 +22,16 @@ resource "aws_s3_bucket_acl" "bucket_acl" {
   bucket = aws_s3_bucket.bucket.id
   acl    = "private"
 }
+
+
+# enable bucket versioning
+resource "aws_s3_bucket_versioning" "bucket-ver" {
+  bucket = aws_s3_bucket.bucket.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
 # block public access :
 resource "aws_s3_bucket_public_access_block" "public_block" {
   bucket                  = aws_s3_bucket.bucket.id
@@ -73,7 +83,7 @@ resource "aws_s3_object" "object_png" {
   for_each     = fileset("uploads/assets/", "*")
   key          = "static-website/assets/${each.value}"
   source       = "uploads/assets/${each.value}"
-   content_type = "object/png"
+  content_type = "object/png"
 }
 
 #upload jpeg to s3:
@@ -82,7 +92,7 @@ resource "aws_s3_object" "object_jpeg" {
   for_each     = fileset("uploads/assets/images/", "*")
   key          = "static-website/assets/images/${each.value}"
   source       = "uploads/assets/images/${each.value}"
-   content_type = "object/jpeg"
+  content_type = "object/jpeg"
 }
 
 #upload jpg to s3:
@@ -91,5 +101,5 @@ resource "aws_s3_object" "object_jpg" {
   for_each     = fileset("uploads/assets/images/", "*")
   key          = "static-website/assets/images/${each.value}"
   source       = "uploads/assets/images/${each.value}"
-   content_type = "object/jpg"
+  content_type = "object/jpg"
 }
