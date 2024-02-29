@@ -1,6 +1,7 @@
-# creating aws-waf-owasp-cloudfront
+# creating aws-waf-cloudfront
 
-module "waf-owasp_example_waf-global-cloudfront" {
-  source  = "binbashar/waf-owasp/aws//examples/waf-global-cloudfront"
-  version = "1.0.20"
+module "waf-webaclv2" {
+  source  = "umotif-public/waf-webaclv2/aws"
+  version = "5.1.2"
+  name_prefix = "dynamics-waf-cf_dist # insert the 1 required variable here
 }
