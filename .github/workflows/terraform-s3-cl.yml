@@ -1,55 +1,93 @@
 ## Code Contributed by Joseph
-name: "Terraform"
+name: Terraform Deploy Infrastructure
+run-name: ${{ github.actor }} is running Terraform Deployment on ${{ github.repository }} repository.
 
 on:
+  workflow_dispatch:
+  
   push:
     branches:
       - main
 
 jobs:
-  install-dependencies:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - name: Run Installation of Dependencies Commands
-        run: npm install
+ terraform:
+  name: Deploy Site
+  runs-on: ubuntu-latest
+  steps:
+      
+  - name: Checkout Repo
+    uses: actions/checkout@v3
 
-  terraform:
-    name: "Terraform"
-    runs-on: ubuntu-latest
+  - name: Terraform Init
+    uses: hashicorp/terraform-github-actions/init@v0.4.0
     env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      TF_ACTION_WORKING_DIR: 'src'
+      AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      
+  - name: Terraform Validate
+    uses: hashicorp/terraform-github-actions/validate@v0.3.7
+      
+  - name: Terraform Apply
+    uses: hashicorp/terraform-github-actions/apply@v0.4.0
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      TF_ACTION_WORKING_DIR: 'src'
+      AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      
+  - name: Sync S3
+    uses: jakejarvis/s3-sync-action@master
+    env:
+      SOURCE_DIR: './src'
+      AWS_REGION: 'var.region'
+      AWS_S3_BUCKET: 'var.bucket_prefix'
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    defaults:
-      run:
-        working-directory: src
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.0.1
-          terraform_wrapper: false
+# jobs:
+#   pre-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Check out repository code
+#         uses: actions/checkout@v4
 
-      - name: Terraform Format
-        id: fmt
-        run: terraform fmt -check
-        continue-on-error: true
+#   terraform:
+#     name: "Terraform"
+#     runs-on: ubuntu-latest
+#     env:
+#       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#     defaults:
+#       run:
+#         working-directory: src
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
 
-      - name: Terraform Init
-        id: init
-        run: terraform init
+#       - name: Setup Terraform
+#         uses: hashicorp/setup-terraform@v1
+#         with:
+#           terraform_version: 1.0.1
+#           terraform_wrapper: false
 
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate -no-color
+#       - name: Terraform Format
+#         id: fmt
+#         run: terraform fmt -check
+#         continue-on-error: true
 
-      - name: Terraform Plan
-        id: plan
-        run: terraform plan -no-color
+#       - name: Terraform Init
+#         id: init
+#         run: terraform init
 
-      - name: Terraform Apply
-        run: terraform apply -auto-approve
+#       - name: Terraform Validate
+#         id: validate
+#         run: terraform validate -no-color
+
+#       - name: Terraform Plan
+#         id: plan
+#         run: terraform plan -no-color
+
+#       - name: Terraform Apply
+#         run: terraform apply -auto-approve

@@ -1,12 +1,10 @@
 ## Code Contributed by Rudyn
-name: Checkov
+name: Checkov Analysis
 run-name: ${{ github.actor }} is running Checkov on the ${{ github.ref }} branch for ${{ github.repository }} repository.
 
 on:
-  workflow_dispatch:
-  
   pull_request:
-    branches: [ "main", "Development" ]
+    branches: [ main, "*"]
 
 jobs:
   Checkov:
