@@ -8,7 +8,7 @@ resource "aws_cloudfront_distribution" "cf_dist" {
   enabled             = true
   aliases             = [local.website_domain]
   default_root_object = "static-website/index.html"
-  web_acl_id = var.web_acl_arn
+  web_acl_id          = var.web_acl_arn
   origin {
     domain_name = aws_s3_bucket.bucket.bucket_regional_domain_name
     origin_id   = aws_s3_bucket.bucket.id

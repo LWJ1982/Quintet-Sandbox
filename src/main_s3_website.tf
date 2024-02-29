@@ -64,44 +64,23 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
   bucket = aws_s3_bucket.bucket.id
   policy = data.aws_iam_policy_document.bucket_policy_document.json
 }
+
 #upload website files to s3:
+locals {
+  mime_types = {
+    "css"  = "uploads/css",
+    "html" = "uploads/html",
+    "png"  = "assets/png",
+    "jpeg" = "image/jpeg",
+    "jpg"  = "image/jpeg"
+  }
+}
+
 resource "aws_s3_object" "object" {
+  for_each     = fileset("./uploads/", "**/*.*")
   bucket       = aws_s3_bucket.bucket.id
-  for_each     = fileset("uploads/", "*")
-  key          = "static-website/${each.value}"
-  source       = "uploads/${each.value}"
-  etag         = filemd5("uploads/${each.value}")
-  content_type = "text/html"
-  depends_on = [
-    aws_s3_bucket.bucket
-  ]
+  key          = each.value
+  source       = "./uploads/${each.value}"
+  content_type = lookup(tomap(local.mime_types), element(split(".", each.value), length(split(".", each.value)) - 1))
+  etag         = filemd5("./uploads/${each.value}")
 }
-
-#upload png to s3:
-resource "aws_s3_object" "object_png" {
-  bucket       = aws_s3_bucket.bucket.id
-  for_each     = fileset("uploads/assets/", "*")
-  key          = "static-website/assets/${each.value}"
-  source       = "uploads/assets/${each.value}"
-  content_type = "object/png"
-}
-
-#upload jpeg to s3:
-resource "aws_s3_object" "object_jpeg" {
-  bucket       = aws_s3_bucket.bucket.id
-  for_each     = fileset("uploads/assets/images/", "*")
-  key          = "static-website/assets/images/${each.value}"
-  source       = "uploads/assets/images/${each.value}"
-  content_type = "object/jpeg"
-}
-
-#upload jpg to s3:
-resource "aws_s3_object" "object_jpg" {
-  bucket       = aws_s3_bucket.bucket.id
-  for_each     = fileset("uploads/assets/images/", "*")
-  key          = "static-website/assets/images/${each.value}"
-  source       = "uploads/assets/images/${each.value}"
-  content_type = "object/jpg"
-}
-
-
