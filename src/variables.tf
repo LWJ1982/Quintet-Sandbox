@@ -19,3 +19,13 @@ variable "domain_name" {
 locals {
   website_domain = "dynamics.${var.domain_name}"
 }
+
+variable "web_acl_arn" {
+  description = "The ARN of the WAFv2 WebACL"
+  type = string
+}
+
+variable "web_acl_id" {
+  description = "The ID of the WAFv2 WebACL"
+  type = string
+}
