@@ -1,5 +1,5 @@
 ## Code Contributed by Rudyn
-name: Snyk CICD
+name: Snyk Scan
 run-name: ${{ github.actor }} is running Snyk on ${{ github.repository }} repository.
 
 on:

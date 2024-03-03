@@ -1,4 +1,73 @@
-# CapstoneProject-DevSecOps Grp 3 (Quintet) 
+# DevSecOps
+## _Capstone Project, Grp 3 (Quintet)_ 
+### _Project Name: To Be Decide_
+### _Date: To Be Decide_
+### _Author(s):_
+- Ang Kok Beng
+- Joseph Ong
+- Lim Wei Jie
+- Muhammad Rudyn
+- Sagar Ingale
+____________________________________________________________
+## _Introduction_
+This README.md details the implementation of a DevSecOps approach for the [To Be Decided] project. It outlines the methodologies, tools, and outcomes achieved by integrating development, security, and operations processes throughout the software development lifecycle (SDLC).
+## _Methodology_
+_Our project adopted the following DevSecOps practices:_ 
+**Please update if missed out**
+
+- **Shift Left Security:** Security considerations were integrated from the initial planning stages, ensuring early identification and mitigation of vulnerabilities.
+- **Continuous Integration and Continuous Delivery (CI/CD):** An automated pipeline was established to continuously integrate code changes, run security scans, and deploy builds to testing and production environments.
+- **Infrastructure as Code (IaC)**: Infrastructure configurations were managed as code, enabling consistent and secure deployments across environments.
+- **Security Automation:** Security testing tools were integrated into the CI/CD pipeline to automate vulnerability scanning and penetration testing.
+- **Collaboration and Communication:** Regular communication and collaboration between development, security, and operations teams were fostered to ensure alignment and address security concerns promptly.
+
+## _Tools and Technologies_
+_Our project utilized various tools and technologies to support the DevSecOps approach:_ **Please update if missed out**
+
+- **Computing platform & services:** [AWS Cloud, S3 buckets, ACM, ACL, SSM, OAI, Cloudfront, Route53 ... ]
+- **Version control system (VCS):** [GitHub]
+- **CI/CD pipeline tool:** [GitHub Action] 
+- **Security scanning tools:** [OWASP top 10, Checkov, Snyk]
+- **Static Application Security Testing (SAST):** [Snyk]
+- **Dynamic Application Security Testing (DAST):** [Snyk] 
+- **Infrastructure Security Scanning:** [Checkov & Snyk] 
+- **IaC tools:** [Terraform] 
+- **Communication platforms:** [Slack, Zoom, Microsoft Team]
+
+## _Outcomes_
+_The implementation of DevSecOps resulted in several positive outcomes:_
+
+- **Improved security posture:** Early identification and remediation of vulnerabilities throughout the SDLC significantly reduced security risks.
+- **Faster time to market:** Automated testing and deployment processes accelerated software delivery timelines.
+- **Enhanced collaboration:** Continuous communication and shared ownership of security fostered a collaborative and efficient development environment.
+- **Increased operational efficiency:** Infrastructure automation streamlined deployments and reduced manual configuration errors.
+
+## Challengers and Lessons Learned
+
+_Challenger(s) encountered:_
+
+- **Initial integration complexity:**
+Integrating security tools and processes into existing workflows required initial effort and adaptation.
+- **Cultural shift:**
+Fostering a culture of shared security responsibility across development, security, and operations teams took time and ongoing communication. Messy start
+
+## Conclusion
+The DevSecOps approach successfully enhanced the security, efficiency, and collaboration within the [Project Name] project. By integrating security considerations throughout the SDLC and leveraging automation tools, the project achieved faster delivery times, improved security posture, and streamlined operations. The lessons learned from this project will be valuable for future endeavors, fostering a secure and efficient software development environment.
+
+## Next Steps
+**The project team will continue to:**
+
+- Refine and improve the DevSecOps pipeline for increased efficiency and effectiveness.
+- Foster a continuous learning culture to stay updated on emerging security threats and best practices.
+- Explore opportunities to expand the DevSecOps approach to other projects within the organization.
+
+
+
+In progress..
+____________________________________________________________
+DevSecOps is the seamless integration of security with two other disciplines: devlopment and operations. Main purpose is to build security into the Continuous Integration and Continuos Delivery (CI/CD) pipeline. Enabling fast and secure software releases, while rapidly detecting and responding to security flaws (vulnerabilities - such as Cross-site Scriping, Broken Access Control, SQL Injection, Insecure Sesign, Poor Data Sanitization and others mentioned in OWASP).
+
+
 Deploy a static website for wellness client in various region.
 Implement security measures 
 https://dynamics.sctp-sandbox.com/
