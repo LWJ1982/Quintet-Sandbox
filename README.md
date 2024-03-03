@@ -51,6 +51,18 @@ Integrating security tools and processes into existing workflows required initia
 - **Cultural shift:**
 Fostering a culture of shared security responsibility across development, security, and operations teams took time and ongoing communication. Messy start
 
+## Conclusion
+The DevSecOps approach successfully enhanced the security, efficiency, and collaboration within the [Project Name] project. By integrating security considerations throughout the SDLC and leveraging automation tools, the project achieved faster delivery times, improved security posture, and streamlined operations. The lessons learned from this project will be valuable for future endeavors, fostering a secure and efficient software development environment.
+
+## Next Steps
+**The project team will continue to:**
+
+- Refine and improve the DevSecOps pipeline for increased efficiency and effectiveness.
+- Foster a continuous learning culture to stay updated on emerging security threats and best practices.
+- Explore opportunities to expand the DevSecOps approach to other projects within the organization.
+
+
+
 In progress..
 ____________________________________________________________
 DevSecOps is the seamless integration of security with two other disciplines: devlopment and operations. Main purpose is to build security into the Continuous Integration and Continuos Delivery (CI/CD) pipeline. Enabling fast and secure software releases, while rapidly detecting and responding to security flaws (vulnerabilities - such as Cross-site Scriping, Broken Access Control, SQL Injection, Insecure Sesign, Poor Data Sanitization and others mentioned in OWASP).
