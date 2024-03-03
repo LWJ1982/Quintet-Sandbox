@@ -1,4 +1,11 @@
-# CapstoneProject-DevSecOps Grp 3 (Quintet) 
+# DevSecOps
+## _Capstone Project, Grp 3 (Quintet)_ 
+DevSecOps is the seamless integration of security with two other disciplines: devlopment and operations. Main purpose is to build security into the Continuous Integration and Continuos Delivery (CI/CD) pipeline. Enabling fast and secure software releases, while rapidly detecting and responding to security flaws (vulnerabilities - such as Cross-site Scriping, Broken Access Control, SQL Injection, Insecure Sesign, Poor Data Sanitization and others mentioned in OWASP).
+
+
+
+
+
 Deploy a static website for wellness client in various region.
 Implement security measures 
 https://dynamics.sctp-sandbox.com/
