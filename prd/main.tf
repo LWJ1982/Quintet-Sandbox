@@ -1,5 +1,4 @@
 locals {
-  # env           = "prd"
   domain_prefix = "quintet-cloudfront"
   zone_name     = "sctp-sandbox.com"
 }
@@ -56,9 +55,9 @@ module "records" {
 #upload website files to s3:
 locals {
   mime_types = {
-    "css"  = "uploads/css",
+    "css"  = "text/css",
     "html" = "text/html",
-    "png"  = "assets/png",
+    "png"  = "image/png",
     "jpeg" = "image/jpeg",
     "jpg"  = "image/jpeg"
   }
