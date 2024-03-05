@@ -5,3 +5,13 @@
 #     region = "ap-southeast-1"
 #   }
 # }
+
+
+# To remove after testinhg by akb
+terraform {
+  backend "s3" {
+    bucket = "sctp-ce4-tfstate-bucket"
+    key    = "dev/terraform.tfstate"
+    region = "ap-southeast-1"
+  }
+}
