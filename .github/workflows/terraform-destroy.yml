@@ -10,14 +10,14 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_REGION: 'ap-southeast-1'
 
         steps:
          - name: Checkout
            uses: actions/checkout@v4
 
          - name: Terraform Destroy Workflow
-           working-directory: s3_bucket
+           working-directory: prd
            run: |
              terraform init
              terraform plan -destroy
