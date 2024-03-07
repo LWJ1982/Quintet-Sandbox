@@ -199,8 +199,13 @@ Screen capture
 26 Feb 2024 @9.08PM by Raymond
 
 
-7 March 2024 @8:08 by Sagar
+07 Mar 2024 @8:08PM by Sagar
 Test Synk actions
+
+07 Mar 2024 @11.49PM by Raymond
+Test dynamoDB state lock
+
+
 
 
 
