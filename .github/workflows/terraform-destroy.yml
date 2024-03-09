@@ -20,5 +20,5 @@ jobs:
            working-directory: prd
            run: |
              terraform init
-             terraform plan -destroy
-             terraform destroy -auto-approve
+             terraform plan -lock=false
+             terraform destroy -auto-approve -lock=false
